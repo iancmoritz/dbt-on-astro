@@ -9,9 +9,7 @@ from pathlib import Path
 from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
 from cosmos.profiles import PostgresUserPasswordProfileMapping
 
-DEFAULT_DBT_ROOT_PATH = (
-    Path(__file__).parent.parent / "dbt"
-)  # As a sibling of the DAGs directory
+DEFAULT_DBT_ROOT_PATH = Path(__file__).parent / "dbt"  # Inside the DAGs directory
 DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))
 
 profile_config = ProfileConfig(
@@ -27,7 +25,7 @@ profile_config = ProfileConfig(
 basic_cosmos_dag = DbtDag(
     # dbt/cosmos-specific parameters
     project_config=ProjectConfig(
-        DBT_ROOT_PATH / "databricks",
+        DBT_ROOT_PATH / "bigquery",
     ),
     profile_config=profile_config,
     operator_args={
