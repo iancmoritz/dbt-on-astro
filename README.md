@@ -1,5 +1,7 @@
 # dbt on Astro - Reference Implementation
 
+Hello world!
+
 This repository answers the following question: **How do I set up, run, and maintain dbt workflows for any-size teams on Astro and Airflow**?
 
 ![dbt on Astro graphic](https://www.astronomer.io/images/blog_dbt_b.jpg)
